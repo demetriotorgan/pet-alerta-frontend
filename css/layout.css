@@ -74,3 +74,28 @@ body {
     letter-spacing: 0.5px;
 }
 
+/* --- Esconder o aviso por padrão no mobile --- */
+.desktop-placeholder {
+  display: none;
+}
+
+/* --- Media Query para telas maiores (Desktop) --- */
+@media (min-width: 768px) {
+  /* Esconde tudo o que compõe o app mobile */
+  .app-container {
+    display: none !important; 
+  }
+
+  /* Exibe o aviso */
+  .desktop-placeholder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--light);
+    color: var(--dark);
+    text-align: center;
+    padding: 2rem;
+  }
+}
