@@ -1,0 +1,26 @@
+:root {
+    /* Paleta de Cores Globais */
+    --primary: #0D6EFD;
+    --primary-dark: #0A58CA;
+    --secondary: #6C757D;
+    --success: #198754;
+    --warning: #FFC107;
+    --danger: #DC3545;
+    --light: #F8F9FA;
+    --dark: #2C3E50;
+    --white: #FFFFFF;
+
+    /* Configurações Globais de Espaçamento (Design System) */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+
+    /* Arredondamentos Padrão */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+
+    /* Tipografia Base */
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

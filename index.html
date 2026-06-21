@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Pet Alerta Frontend V1</title>
+</head>
+
+<body>
+    <div class="app-container">
+
+        <header class="app-header">
+            <div class="header-brand">PetAlerta</div>
+            <div class="header-actions">
+                <a id="btn-ver-animais" href="index.html" class="btn-primary">Ver Animais</a>
+                <a id="btn-anunciar-pet" href="cadastro.html" class="btn-nav">Anunciar Pet</a>
+            </div>
+        </header>
+
+        <main class="dashboard-main">
+            <section class="dashboard-title-bar">
+                <button class="btn-menu-icon" aria-label="Abrir menu">
+                    <i class="ph ph-list"></i>
+                </button>
+                <h1>Encontre seu Amigo<span><i class="ph-duotone ph-paw-print"></i></h1>
+                <button class="btn-search-icon" aria-label="Buscar animais">
+                    <i class="ph ph-magnifying-glass"></i>
+                </button>
+            </section>
+
+            <section class="filters-container">
+                <h2>Filtros rápidos</h2>
+                <div class="filters-grid">
+                    <button class="filter-badge active">
+                        Perdidos <i class="ph ph-x"></i>
+                    </button>
+                    <button class="filter-badge">
+                        Achados <i class="ph ph-x"></i>
+                    </button>
+                    <button class="filter-badge">
+                        Cães <i class="ph ph-x"></i>
+                    </button>
+                    <button class="filter-badge">
+                        Gatos <i class="ph ph-x"></i>
+                    </button>
+                    <button class="filter-badge">
+                        Recentes <i class="ph ph-x"></i>
+                    </button>
+                </div>
+            </section>
+
+            <section class="pet-list">
+                <article class="pet-card">
+                    <div class="pet-card-thumb">
+                        <img src="./img/cachorro1.jfif" alt="Foto do Pet">
+                    </div>
+
+                    <div class="pet-card-info">
+                        <h3>Pipoca</h3>
+                        <div class="pet-specs">
+                            <span><i class="ph-duotone ph-paw-print"></i> <strong>Espécie:</strong> Cachorro</span>
+                            <span><i class="ph ph-dna"></i> <strong>Raça:</strong> SRD (Vira-lata)</span>
+                            <span><i class="ph ph-gender-intersex"></i> <strong>Sexo:</strong> Macho</span>
+                            <span><i class="ph ph-cake"></i> <strong>Idade:</strong> 2 anos</span>
+                            <span><i class="ph ph-ruler"></i> <strong>Porte:</strong> Médio</span>
+                            <span><i class="ph ph-palette"></i> <strong>Cor:</strong> Caramelo com mancha branca no
+                                peito</span>
+                        </div>
+                        <p class="pet-description">O Pipoca fugiu ontem à noite próximo à Praça da Matriz. Ele é muito
+                            dócil, mas pode estar assustado. Usa uma coleira azul. Por favor, qualquer informação entre
+                            em contato!</p>
+                    </div>
+
+                    <div class="pet-card-contact">
+                        <p><strong>Contato:</strong> João</p>
+                        <p><strong>Telefone:</strong> 44-98765-4321
+                            <a href="https://wa.me/5511987654321" class="wpp-link">
+                                <i class="ph-duotone ph-whatsapp-logo wpp-icon"></i>
+                            </a>
+                        </p>
+                        <p><strong>Cidade:</strong> Nova Londrina</p>
+                        <span class="badge badge-perdido">Perdido 🔴</span>
+                    </div>
+
+                    <footer class="pet-card-footer">
+                        <span>Última Atualização:</span>
+                        <span>20/06/2026</span>
+                    </footer>
+                </article>
+
+                <article class="pet-card">
+                    <div class="pet-card-thumb">
+                        <img src="./img/gato1.avif" alt="Foto do Pet">
+                    </div>
+
+                    <div class="pet-card-info">
+                        <h3>Luna (Resgatada)</h3>
+                        <div class="pet-specs">
+                            <span><i class="ph-duotone ph-paw-print"></i> <strong>Espécie:</strong> Gato</span>
+                            <span><i class="ph ph-dna"></i> <strong>Raça:</strong> SRD (Vira-lata)</span>
+                            <span><i class="ph ph-gender-intersex"></i> <strong>Sexo:</strong> Fêmea</span>
+                            <span><i class="ph ph-cake"></i> <strong>Idade:</strong> Aprox. 6 meses</span>
+                            <span><i class="ph ph-ruler"></i> <strong>Porte:</strong> Pequeno</span>
+                            <span><i class="ph ph-palette"></i> <strong>Cor:</strong> Escaminha (Preta e laranja)</span>
+                        </div>
+                        <p class="pet-description">Encontrei esta gatinha próxima ao ponto de ônibus da Av. Central.
+                            Estava muito assustada e com fome. Não posso ficar com ela, mas já dei banho e ofereci
+                            ração. Precisa urgentemente de um lar ou de alguém que possa oferecer abrigo temporário.</p>
+                    </div>
+
+                    <div class="pet-card-contact">
+                        <p><strong>Contato:</strong> Marta</p>
+                        <p><strong>Telefone:</strong> 44-98765-4321
+                            <a href="https://wa.me/5511987654321" class="wpp-link">
+                                <i class="ph-duotone ph-whatsapp-logo wpp-icon"></i>
+                            </a>
+                        </p>
+                        <p><strong>Cidade:</strong> Itaúna do Sul</p>
+                        <span class="badge badge-abandonado">Abandonado 🔴</span>
+                    </div>
+
+                    <footer class="pet-card-footer">
+                        <span>Última Atualização:</span>
+                        <span>20/06/2026</span>
+                    </footer>
+                </article>
+
+                <article class="pet-card">
+                    <div class="pet-card-thumb">
+                        <img src="./img/cachorro2.jfif" alt="Foto do Pet">
+                    </div>
+
+                    <div class="pet-card-info">
+                        <h3>Bolinha</h3>
+                        <div class="pet-specs">
+                            <span><i class="ph-duotone ph-paw-print"></i> <strong>Espécie:</strong> Cachorro</span>
+                            <span><i class="ph ph-dna"></i> <strong>Raça:</strong> Beagle</span>
+                            <span><i class="ph ph-gender-intersex"></i> <strong>Sexo:</strong> Macho</span>
+                            <span><i class="ph ph-cake"></i> <strong>Idade:</strong> 4 anos</span>
+                            <span><i class="ph ph-ruler"></i> <strong>Porte:</strong> Médio</span>
+                            <span><i class="ph ph-palette"></i> <strong>Cor:</strong>Tricolor</span>
+                        </div>
+                        <p class="pet-description">O Bolinha é um cão extremamente carinhoso e energético. Foi resgatado
+                            e está vacinado e castrado. Ideal para famílias com crianças e que tenham espaço para ele
+                            brincar. Ele adora passear no parque!</p>
+                    </div>
+
+                    <div class="pet-card-contact">
+                        <p><strong>Contato:</strong> Cris</p>
+                        <p><strong>Telefone:</strong> 44-98765-4321
+                            <a href="https://wa.me/5511987654321" class="wpp-link">
+                                <i class="ph-duotone ph-whatsapp-logo wpp-icon"></i>
+                            </a>
+                        </p>
+                        <p><strong>Cidade:</strong> Diamante do Norte</p>
+                        <span class="badge badge-adotado">Adoção 🔴</span>
+                    </div>
+
+                    <footer class="pet-card-footer">
+                        <span>Última Atualização:</span>
+                        <span>20/06/2026</span>
+                    </footer>
+                </article>
+            </section>
+        </main>
+
+        <nav class="app-navbar">
+            <a href="#" class="nav-item active">
+                <i class="ph ph-house"></i>
+                <span class="label">Home</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="ph ph-plus-circle"></i>
+                <span class="label">Novo</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="ph ph-user"></i>
+                <span class="label">Perfil</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="ph ph-gear"></i>
+                <span class="label">Configurações</span>
+            </a>
+        </nav>
+
+    </div>
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

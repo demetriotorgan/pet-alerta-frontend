@@ -1,0 +1,126 @@
+/* ==========================================================================
+   Pet Alerta - Componentes de Botões (buttons.css)
+   ========================================================================== */
+
+/* 1. Estilo Base Comum para os Botões */
+.btn-nav, 
+.btn-primary {
+    font-family: var(--font-main);
+    font-size: 14px;         
+    font-weight: 600;        
+    padding: 10px 20px;      
+    border-radius: 20px;     
+    border: none;            
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease, transform 0.1s ease; 
+    white-space: nowrap;     
+    text-decoration: none;
+}
+
+/* 2. Botão Secundário / Link de Navegação ("Ver Animais") */
+.btn-nav {
+    background-color: transparent; 
+    color: var(--primary);         
+}
+
+.btn-nav:hover {
+    color: var(--primary-dark);    
+    background-color: var(--light);
+}
+
+/* 3. Botão Principal / Call To Action ("Anunciar Pet") */
+.btn-primary {
+    background-color: var(--primary); 
+    color: var(--white);              
+    box-shadow: 0 2px 4px rgba(13, 110, 253, 0.2); 
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark); 
+}
+
+/* 4. Feedback tátil para Mobile (Toque) */
+.btn-nav:active,
+.btn-primary:active {
+    transform: scale(0.96);
+}
+
+/* ==========================================================================
+   Botões de Ícone (Menu e Busca do Dashboard)
+   ========================================================================== */
+.btn-menu-icon, .btn-search-icon {
+    background-color: transparent; /* Remove o fundo cinza padrão */
+    border: none;                  /* Remove a borda padrão do navegador */
+    font-size: 20px;               /* Aumenta o tamanho do caractere/ícone para boa usabilidade */
+    color: var(--dark);            /* Usa a cor padrão do sistema */
+    cursor: pointer;
+    padding: 8px;                  /* Cria uma área de toque invisível maior (UX Mobile) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+/* Feedback visual sutil ao passar o mouse ou tocar */
+.btn-menu-icon:hover, .btn-search-icon:hover {
+    color: var(--primary);         /* Destaca com a cor azul primária */
+}
+
+/* Feedback tátil para o polegar no celular */
+.btn-menu-icon:active, .btn-search-icon:active {
+    transform: scale(0.9);         /* Reduz sutilmente simulando o clique físico */
+}
+
+/* ==========================================================================
+   Badges / Pílulas de Filtro (.filter-badge)
+   ========================================================================== */
+.filter-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;                       /* Espaço entre o texto e o ícone 'X' */
+    background-color: var(--white); /* Fundo padrão inativo */
+    border: 1px solid #e0e0e0;      /* Borda sutil cinza */
+    color: var(--dark);
+    padding: 6px 14px;              /* Proporção ideal de pílula */
+    border-radius: 20px;            /* Bordas totalmente arredondadas */
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;            /* Impede o texto de quebrar linha */
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Ícone interno (o X) */
+.filter-badge i {
+    font-size: 12px;
+    opacity: 0.6;
+    transition: transform 0.2s ease;
+}
+
+/* Estado: Filtro Ativo/Selecionado (Destaque do Wireframe) */
+.filter-badge.active {
+    background-color: var(--primary); /* Usa o azul principal */
+    border-color: var(--primary);
+    color: var(--white);              /* Texto fica branco */
+}
+
+.filter-badge.active i {
+    opacity: 1;                       /* Ícone fica totalmente visível */
+}
+
+/* Feedbacks de Interação */
+.filter-badge:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.filter-badge.active:hover {
+    background-color: #0056b3;        /* Tom de azul um pouco mais escuro ao passar o mouse */
+    border-color: #0056b3;
+    color: var(--white);
+}
+
+.filter-badge:active {
+    transform: scale(0.95);
+}

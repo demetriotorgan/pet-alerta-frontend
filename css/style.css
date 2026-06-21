@@ -1,0 +1,16 @@
+/* ==========================================================================
+   Pet Alerta - Arquivo Orquestrador Principal
+   ========================================================================== */
+
+/* 1. Configurações Base e Variáveis (Não geram design visual direto) */
+@import url('./variables.css');
+@import url('./reset.css');
+
+/* 2. Estrutura de Layout e Grid Principal */
+@import url('./layout.css');
+
+/* 3. Componentes Específicos do Dashboard */
+@import url('./componentes/buttons.css');
+@import url('./componentes/filters.css');
+@import url('./componentes/card.css');
+@import url('./navbar.css');
