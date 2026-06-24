@@ -8,6 +8,14 @@ import { logPayload } from '../services/logPayload.js';
 export function initPetForm(cameraController) {
 
     const petForm = document.getElementById('petForm');
+    const inputGaleria = document.getElementById('petGalleryFile');
+
+    inputGaleria.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+
+        if (!file) return;
+        
+    });
 
     petForm.addEventListener('submit', (event) => {
         event.preventDefault();

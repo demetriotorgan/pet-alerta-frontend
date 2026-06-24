@@ -1,7 +1,15 @@
-export function gerarPayload(formElement, fotoBlob = null){
-    const paylaod =  new FormData(formElement); //Captura automaticamente todos os campos com o atributo 'name'
-    if(fotoBlob){
-        paylaod.set('foto', fotoBlob, `captura_${Date.now()}.jpg`);
+export function gerarPayload(formElement, foto = null) {
+
+    const formData = new FormData(formElement);
+
+    // 🔥 REMOVE qualquer foto automática do input HTML
+    formData.delete('foto');
+
+    // 🔥 define fonte única (controller manda)
+    if (foto) {
+        const nomeFinal = foto.name || `foto_${Date.now()}.jpg`;
+        formData.set('foto', foto, nomeFinal);
     }
-    return paylaod;
+
+    return formData;
 }

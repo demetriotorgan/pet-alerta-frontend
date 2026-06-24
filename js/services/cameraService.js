@@ -1,6 +1,6 @@
 import { CamJS } from "../CamJS.js";
 import { CAMERA_STATE, atualizarStatus } from "../utils/cameraUI.js";
-import { videoPreview, imagePreview, botaoCamera, textoBotaoCamera, statusCamera, inputGaleria,overlay  } from "../utils/domHelpers.js";
+import { videoPreview, imagePreview, botaoCamera, textoBotaoCamera, statusCamera, inputGaleria, overlay } from "../utils/domHelpers.js";
 
 export function initCameraController() {
 
@@ -8,6 +8,7 @@ export function initCameraController() {
     let fotoCapturadaBlob = null;
     let estadoCamera = CAMERA_STATE.OFF;
     let previewUrl = null;
+    let fotoGaleriaFile = null;
 
     // Inicializa a instância da CamJS passando o elemento de vídeo mapeado no HTML
     const cameraInstancia = new CamJS({
@@ -31,6 +32,7 @@ export function initCameraController() {
 
         textoBotaoCamera.textContent = 'Ligar Câmera';
         atualizarStatus(statusCamera, 'Status: Câmera Desligada', '#555');
+        fotoGaleriaFile = null;
         inputGaleria.value = '';
     };
 
@@ -68,7 +70,9 @@ export function initCameraController() {
         } finally {
             capturando = false;
         }
-    }
+    };
+
+
 
     botaoCamera.addEventListener('click', async () => {
         if (estadoCamera === CAMERA_STATE.OFF || estadoCamera === CAMERA_STATE.CAPTURED) {
@@ -97,7 +101,12 @@ export function initCameraController() {
 
         if (inputGaleria.files.length > 0) {
 
+            const file = inputGaleria.files[0];
+            fotoGaleriaFile = file;
+            console.log("📁 FILE CAPTURADO:", file);
+
             fotoCapturadaBlob = null;
+
             if (previewUrl) {
                 URL.revokeObjectURL(previewUrl);
                 previewUrl = null;
@@ -105,12 +114,19 @@ export function initCameraController() {
 
             imagePreview.src = '';
 
+            // 🔥 CRIA PREVIEW DA GALERIA
+            previewUrl = URL.createObjectURL(file);
+            imagePreview.src = previewUrl;
+            imagePreview.style.display = 'block';
+
+            videoPreview.style.display = 'none';
+
             if (estadoCamera === CAMERA_STATE.LIVE) {
                 cameraInstancia.parar();
             }
 
-            videoPreview.style.display = 'none';
-            imagePreview.style.display = 'none';
+            // videoPreview.style.display = 'none';
+            // imagePreview.style.display = 'none';
 
             estadoCamera = CAMERA_STATE.OFF;
 
@@ -131,14 +147,15 @@ export function initCameraController() {
     });
 
     overlay.addEventListener("click", (e) => {
-    if (estadoCamera !== CAMERA_STATE.LIVE) return;
-    if (videoPreview.videoWidth === 0) return;
+        if (estadoCamera !== CAMERA_STATE.LIVE) return;
+        if (videoPreview.videoWidth === 0) return;
 
-    capturarFoto();
-});
+        capturarFoto();
+    });
 
     return {
         getFotoBlob: () => fotoCapturadaBlob,
+        getGalleryFile: () => fotoGaleriaFile,
         reset,
         parar: () => cameraInstancia.parar()
     }
