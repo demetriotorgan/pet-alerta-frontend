@@ -154,15 +154,10 @@
                         <input type="file" id="petGalleryFile" name="foto" accept="image/*" hidden>
                     </div>
 
-                    <div id="teste-camera-container" style="margin-top: 15px; text-align: center;">
-                        <video id="videoPreview" autoplay playsinline
-                            style="width: 100%; max-width: 320px; background: #ccc; border-radius: 8px; display: none;"></video>
-
-                        <img id="imagePreview" alt="Prévia do pet"
-                            style="width: 100%; max-width: 320px; border-radius: 8px; display: none; border: 2px dashed #198754;" />
-
-                        <div id="statusCamera" style="margin-top: 5px; font-weight: bold; color: #555;">Status: Câmera
-                            Desligada</div>
+                    <div class="camera-container">
+                        <video id="videoPreview" autoplay playsinline></video>
+                        <img id="imagePreview" alt="Prévia do pet" />
+                        <div id="statusCamera" class="status-camera">Status: Câmera Desligada</div>
                     </div>
                 </div>
 

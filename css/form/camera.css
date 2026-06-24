@@ -1,11 +1,37 @@
-.camera-container{
-
+.camera-container {
+    display: flex;
+    flex-direction: column;   /* Empilha os elementos verticalmente */
+    align-items: center;      /* Centraliza horizontalmente tudo que está dentro */
+    justify-content: center;  /* Garante o alinhamento central */
+    margin-top: 15px;
+    gap: 10px;                /* Espaçamento controlado entre mídias e status */
+    width: 100%;
 }
 
-#video{
-
+/* Regras de estrutura compartilhadas para os elementos de mídia */
+.camera-container video,
+.camera-container img {
+    width: 100%;
+    max-width: 320px;         /* Limita o tamanho para telas mobile */
+    border-radius: var(--radius-md, 8px);
+    display: none;
 }
 
-#canvas{
+/* Estilo específico do elemento de vídeo */
+.camera-container video {
+    background-color: #ccc;
+    height: 240px;            /* Define uma altura padrão para quando for exibido pelo JS */
+    object-fit: cover;
+}
 
+/* Estilo específico do elemento de imagem (Prévia capturada) */
+.camera-container img {
+    border: 2px dashed var(--success, #198754);
+}
+
+/* Estilo para a legenda de status */
+.camera-container .status-camera {
+    font-weight: bold;
+    color: #555;
+    font-size: 0.9rem;
 }

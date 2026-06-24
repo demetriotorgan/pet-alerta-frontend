@@ -6,6 +6,7 @@
 @import url(./heroForm.css);
 @import url(./formfields.css);
 @import url(./photoUpload.css);
+@import url(./camera.css);
 
 /*2. Form Container*/
 .form-container {
