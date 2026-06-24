@@ -202,6 +202,30 @@
     align-items: center;
 }
 
+.btn-whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm); /* Espaço entre o ícone e o texto */
+    background-color: var(--success); /* Verde oficial do WhatsApp */
+    color: var(--white);
+    text-decoration: none;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    transition: background-color 0.2s ease;
+}
+
+.btn-whatsapp:hover {
+    filter: brightness(0.9); /* Efeito simples de hover */
+}
+
+.btn-whatsapp i {
+    font-size: 1.5rem; /* Ajuste do tamanho do ícone */
+}
+
 /* Componente Genérico de Badge (Etiqueta de Status) */
 .badge {
     align-self: flex-start; /* Impede que o badge estique por toda a largura do card */
@@ -230,8 +254,14 @@
     border: 1px solid #fcd34d;
 }
 
-.badge-adotado {
+.badge-adocao {
     background-color: #d1fae5; /* Verde claro de fundo */
+    color: #10b981;            /* Verde para sucesso/resolvido */
+    border: 1px solid #6ee7b7;
+}
+
+.badge-encontrado {
+    background-color: var(--warning); /* Verde claro de fundo */
     color: #10b981;            /* Verde para sucesso/resolvido */
     border: 1px solid #6ee7b7;
 }
