@@ -5,6 +5,9 @@ export class CamJS {
         
         // Se a aplicação não passar um canvas, a biblioteca cria um em memória
         this.canvasElement = configuracoes.canvasElement || document.createElement('canvas');
+
+        // Define o modo de faceamento padrão como 'environment' (Traseira) se não for especificado
+        this.facingMode = configuracoes.facingMode || 'environment';
         
         // 2. Estado encapsulado (fim do estado global)
         this.streamAtual = null;
@@ -17,7 +20,13 @@ export class CamJS {
         }
 
         try {
-            this.streamAtual = await navigator.mediaDevices.getUserMedia({ video: true });
+            // Aplicando o facingMode nas constraints do getUserMedia
+            const constraints = {
+                video: {
+                    facingMode: this.facingMode
+                }
+            };
+            this.streamAtual = await navigator.mediaDevices.getUserMedia(constraints);
             this.videoElement.srcObject = this.streamAtual;
         } catch (erro) {
             console.error("CamJS: Falha ao acessar hardware de vídeo.", erro);
