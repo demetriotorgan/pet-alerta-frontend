@@ -30,7 +30,7 @@
             <h2>Cadastrar Animal</h2>
             <form id="petForm">
                 <p>Informações do animal
-                     <i class="ph ph-paw-print"></i>
+                    <i class="ph ph-paw-print"></i>
                 </p>
                 <div class="form-info">
                     <!---Nome-->
@@ -85,7 +85,7 @@
                 <!--Situação-->
                 <div class="form-info">
                     <p>Situação
-                         <i class="ph ph-magnifying-glass"></i>
+                        <i class="ph ph-magnifying-glass"></i>
                     </p>
                     <div class="form-group">
                         <label for="petSituacao">Status:</label>
@@ -94,7 +94,7 @@
                             <option value="ABANDONADO">Abandonado</option>
                             <option value="ADOCAO">Para Adoção</option>
                             <option value="ENCONTRADO">Encontrado</option>
-                            
+
                         </select>
                     </div>
                 </div>
@@ -111,7 +111,7 @@
                 <!--Responsável-->
                 <div class="form-info">
                     <p>Responsável
-                        <i class="ph ph-user-circle"></i>                        
+                        <i class="ph ph-user-circle"></i>
                     </p>
                     <div class="form-group">
                         <label for="responsavelNome">Nome do Responsável</label>
@@ -121,20 +121,20 @@
                         <label for="petContact">Telefone de Whatssapp:
                         </label>
                         <input type="tel" id="petContact" name="telefone" placeholder="Ex: 11999999999" required>
-                    </div>                    
+                    </div>
                 </div>
 
                 <!--Localização-->
                 <div class="form-info">
-                        <p>Localização
-                            <i class="ph ph-map-pin"></i> 
-                        </p>
-                        <div class="form-group">
-                            <label for="petCidade">Cidade:</label>
-                            <input type="text" id="petCidade" name="cidade" autocomplete="address-level2"
-                                placeholder="Informe sua Cidade" required>
-                        </div>                                                
+                    <p>Localização
+                        <i class="ph ph-map-pin"></i>
+                    </p>
+                    <div class="form-group">
+                        <label for="petCidade">Cidade:</label>
+                        <input type="text" id="petCidade" name="cidade" autocomplete="address-level2"
+                            placeholder="Informe sua Cidade" required>
                     </div>
+                </div>
 
                 <!--Foto-->
                 <div class="form-group">
@@ -143,7 +143,7 @@
 
                         <button type="button" id="botaoCamera" class="btn-camera-container">
                             <span class="icon-camera">📷</span>
-                            <span class="text-camera">Tirar foto agora</span>
+                            <span class="text-camera" id="textoBotaoCamera">Ligar Câmera</span>
                         </button>
 
                         <label for="petGalleryFile" class="btn-camera-container">
@@ -152,6 +152,17 @@
                         </label>
 
                         <input type="file" id="petGalleryFile" name="foto" accept="image/*" hidden>
+                    </div>
+
+                    <div id="teste-camera-container" style="margin-top: 15px; text-align: center;">
+                        <video id="videoPreview" autoplay playsinline
+                            style="width: 100%; max-width: 320px; background: #ccc; border-radius: 8px; display: none;"></video>
+
+                        <img id="imagePreview" alt="Prévia do pet"
+                            style="width: 100%; max-width: 320px; border-radius: 8px; display: none; border: 2px dashed #198754;" />
+
+                        <div id="statusCamera" style="margin-top: 5px; font-weight: bold; color: #555;">Status: Câmera
+                            Desligada</div>
                     </div>
                 </div>
 
@@ -162,6 +173,7 @@
         <main id="mural" class="mural-grid">
         </main>
     </div>
+    <script type="module" src="/js/main.js"></script>
 </body>
 
 </html>
