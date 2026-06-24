@@ -1,0 +1,43 @@
+/* Layout dos Botões Criados para Foto */
+.botoes-foto-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.botoes-foto-container .btn-camera-container {
+    flex: 1;
+}
+
+.btn-camera-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    border: 2px dashed #cbd5e1;
+    border-radius: 8px;
+    padding: 20px 15px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+}
+
+.icon-camera {
+    font-size: 1.8rem;
+    margin-bottom: 6px;
+}
+
+.text-camera {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #64748b;
+}
+
+.btn-camera-container input[type="file"] {
+    display: none;
+}
+
+.foto-selecionada{
+    
+}

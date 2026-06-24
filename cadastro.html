@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Cadastro de Animais</title>
 </head>
 
 <body>
+    <!------Menu de Navegação do Header-------->
     <header class="app-header">
         <div class="header-brand">PetAlerta</div>
         <div class="header-actions">
@@ -15,7 +18,158 @@
             <a id="btn-anunciar-pet" href="cadastro.html" class="btn-primary">Anunciar Pet</a>
         </div>
     </header>
-    <h2>Aqui vai o formulário ainda</h2>
+    <!-----Hero Section------>
+    <section class="hero">
+        <h1>Ajude a reencontrar quem espalha amor</h1>
+        <p>Preencha os dados abaixo para registrar um animal perdido, encontrado ou disponível para adoção.</p>
+    </section>
+    <!-----Form----->
+    <div class="form-container">
+
+        <section class="form-section">
+            <h2>Cadastrar Animal</h2>
+            <form id="petForm">
+                <p>Informações do animal
+                     <i class="ph ph-paw-print"></i>
+                </p>
+                <div class="form-info">
+                    <!---Nome-->
+                    <div class="form-group">
+                        <label for="petName">Nome do Pet (se souber):</label>
+                        <input type="text" id="petName" name="nomeAnimal" placeholder="Ex: Bob, Mel...">
+                    </div>
+                    <!---Especie-->
+                    <div class="form-group">
+                        <label for="petType">Espécie do Animal:</label>
+                        <select id="petType" name="especie" required>
+                            <option value="CACHORRO">Cachorro</option>
+                            <option value="GATO">Gato</option>
+                            <option value="OUTRO">Outro</option>
+                        </select>
+                    </div>
+                    <!---Raça-->
+                    <div class="form-group">
+                        <label for="petRaca">Raça (se souber):</label>
+                        <input type="text" id="petRaca" name="raca" placeholder="Vira-Lata">
+                    </div>
+                    <!--Sexo-->
+                    <div class="form-group">
+                        <label for="petSexo">Sexo:</label>
+                        <select id="petSexo" name="sexo" required>
+                            <option value="MACHO">Macho</option>
+                            <option value="FEMEA">Fêmea</option>
+                        </select>
+                    </div>
+                    <!---Idade-->
+                    <div class="form-group">
+                        <label for="petIdade">Idade:</label>
+                        <input type="text" id="petIdade" name="idade" placeholder="1 ano, 6 meses, etc...">
+                    </div>
+                    <!---Porte-->
+                    <div class="form-group">
+                        <label for="petPorte">Porte:</label>
+                        <select id="petPorte" name="porte" required>
+                            <option value="PEQUENO">Pequeno</option>
+                            <option value="MEDIO">Médio</option>
+                            <option value="GRANDE">Grande</option>
+                        </select>
+                    </div>
+                    <!---Cor Predominante-->
+                    <div class="form-group">
+                        <label for="petCor">Cor Predominante:</label>
+                        <input type="text" id="petCor" name="cor"
+                            placeholder="Caramelo, malhado, preto com pintas brancas...">
+                    </div>
+                </div>
+
+                <!--Situação-->
+                <div class="form-info">
+                    <p>Situação
+                         <i class="ph ph-magnifying-glass"></i>
+                    </p>
+                    <div class="form-group">
+                        <label for="petSituacao">Status:</label>
+                        <select id="petSituacao" name="situacao" required>
+                            <option value="PERDIDO">Perdido</option>
+                            <option value="ENCONTRADO">Encontrado</option>
+                            <option value="ADOCAO">Para Adoção</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!--Descrição-->
+                <div class="form-info">
+                    <p>Descrição
+                        <i class="ph ph-article"></i>
+                    </p>
+                    <textarea id="petDescricao" name="descricao"
+                        placeholder="Descreva características, último local visto, coleira, comportamento etc."></textarea>
+                </div>
+
+                <!--Responsável-->
+                <div class="form-info">
+                    <p>Responsável
+                        <i class="ph ph-user-circle"></i>                        
+                    </p>
+                    <div class="form-group">
+                        <label for="responsavelNome">Nome do Responsável</label>
+                        <input type="text" id="responsavelNome" name="nomeResponsavel" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="petContact">Telefone de Whatssapp:
+                        </label>
+                        <input type="tel" id="petContact" name="telefone" placeholder="Ex: 11999999999" required>
+                    </div>                    
+                </div>
+
+                <!--Localização-->
+                <div class="form-info">
+                        <p>Localização
+                            <i class="ph ph-map-pin"></i> 
+                        </p>
+                        <div class="form-group">
+                            <label for="petCidade">Cidade:</label>
+                            <input type="text" id="petCidade" name="cidade" autocomplete="address-level2"
+                                placeholder="Informe sua Cidade" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="petBairro">Bairro</label>
+                            <input type="text" id="petBairro" name="bairro" placeholder="Informe seu Bairro">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="petLocal">Último local visto</label>
+                            <input type="text" id="petLocal" name="ultimoLocal"
+                                placeholder="Se perdido informe o ultimo local visto">
+                        </div>
+                    </div>
+
+                <!--Foto-->
+                <div class="form-group">
+                    <label>Escolha como adicionar a foto:</label>
+                    <div class="botoes-foto-container">
+
+                        <button type="button" id="botaoCamera" class="btn-camera-container">
+                            <span class="icon-camera">📷</span>
+                            <span class="text-camera">Tirar foto agora</span>
+                        </button>
+
+                        <label for="petGalleryFile" class="btn-camera-container">
+                            <span class="icon-camera">📁</span>
+                            <span class="text-camera">Escolher da galeria</span>
+                        </label>
+
+                        <input type="file" id="petGalleryFile" name="foto" accept="image/*" hidden>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">Cadastrar Animal</button>
+            </form>
+        </section>
+
+        <main id="mural" class="mural-grid">
+        </main>
+    </div>
 </body>
 
 </html>

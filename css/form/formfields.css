@@ -1,0 +1,19 @@
+.form-group label {
+    display: block;    
+    font-weight: 600;
+}
+
+.form-group input[type="text"], 
+.form-group input[type="tel"], 
+.form-group select {    
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: var(--primary);
+}

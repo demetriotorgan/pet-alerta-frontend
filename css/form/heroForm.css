@@ -1,0 +1,19 @@
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #4a90e2 0%, #50e3c2 100%);
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+}
+
+.hero h1 { 
+    font-size: 2.3rem; 
+    margin-bottom: 10px; 
+}
+
+.hero p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
