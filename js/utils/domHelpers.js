@@ -5,3 +5,4 @@
     export const textoBotaoCamera = document.getElementById('textoBotaoCamera');
     export const statusCamera = document.getElementById('statusCamera');
     export const inputGaleria = document.getElementById('petGalleryFile');
+    export const overlay = document.querySelector(".camera-overlay");

@@ -1,10 +1,14 @@
 .camera-container {
     display: flex;
-    flex-direction: column;   /* Empilha os elementos verticalmente */
-    align-items: center;      /* Centraliza horizontalmente tudo que está dentro */
-    justify-content: center;  /* Garante o alinhamento central */
+    flex-direction: column;
+    /* Empilha os elementos verticalmente */
+    align-items: center;
+    /* Centraliza horizontalmente tudo que está dentro */
+    justify-content: center;
+    /* Garante o alinhamento central */
     margin-top: 15px;
-    gap: 10px;                /* Espaçamento controlado entre mídias e status */
+    gap: 10px;
+    /* Espaçamento controlado entre mídias e status */
     width: 100%;
 }
 
@@ -12,7 +16,8 @@
 .camera-container video,
 .camera-container img {
     width: 100%;
-    max-width: 320px;         /* Limita o tamanho para telas mobile */
+    max-width: 320px;
+    /* Limita o tamanho para telas mobile */
     border-radius: var(--radius-md, 8px);
     display: none;
 }
@@ -20,7 +25,8 @@
 /* Estilo específico do elemento de vídeo */
 .camera-container video {
     background-color: #ccc;
-    height: 240px;            /* Define uma altura padrão para quando for exibido pelo JS */
+    height: 240px;
+    /* Define uma altura padrão para quando for exibido pelo JS */
     object-fit: cover;
 }
 
@@ -34,4 +40,82 @@
     font-weight: bold;
     color: #555;
     font-size: 0.9rem;
+}
+
+/*-------------LAYER da camera---------------*/
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+}
+
+#videoPreview {
+    width: 100%;
+    border-radius: 12px;
+}
+
+/* LAYER SOBRE O VÍDEO */
+.camera-overlay {
+    position: absolute;
+    inset: 0;
+
+    display: none;
+
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.05));
+
+    cursor: pointer;
+}
+
+/* botão visual */
+.capture-button {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 70px;
+    height: 70px;
+
+    border-radius: 50%;
+
+    background: white;
+    border: 4px solid rgba(255, 255, 255, 0.6);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.3;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+
+    cursor: pointer;
+
+    transition: transform 0.15s ease, background 0.2s ease;
+}
+
+.capture-button i {
+    font-size: 28px;
+    color: #111;
+}
+
+.capture-button:active {
+    transform: translateX(-50%) scale(0.9);
+    background: #f2f2f2;
+}
+
+/* efeito hover estilo app */
+.camera-overlay:hover {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+@keyframes pulse {
+    0% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.08); }
+    100% { transform: translateX(-50%) scale(1); }
+}
+
+.capture-button {
+    animation: pulse 1.8s infinite;
 }
