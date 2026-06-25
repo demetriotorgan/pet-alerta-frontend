@@ -46,7 +46,7 @@
 .video-wrapper {
     position: relative;
     width: 100%;
-    max-width: 500px;
+    max-width: 320px;    
 }
 
 #videoPreview {
@@ -66,6 +66,7 @@
             rgba(0, 0, 0, 0.05));
 
     cursor: pointer;
+    border-radius: var(--radius-md, 8px);
 }
 
 /* botão visual */
