@@ -9,6 +9,7 @@ export function initCameraController() {
     let estadoCamera = CAMERA_STATE.OFF;
     let previewUrl = null;
     let fotoGaleriaFile = null;
+    let onFotoCapturada = null; // <-- callback novo
 
     // Inicializa a instância da CamJS passando o elemento de vídeo mapeado no HTML
     const cameraInstancia = new CamJS({
@@ -64,6 +65,7 @@ export function initCameraController() {
             atualizarStatus(statusCamera, "Status: Foto Capturada com Sucesso!", "#198754");
 
             inputGaleria.value = "";
+             onFotoCapturada?.(); // <-- dispara callback ao tirar foto
         } catch (erro) {
             console.error(erro);
             atualizarStatus(statusCamera, "Status: Erro ao processar captura.", "#DC3545");
@@ -132,6 +134,7 @@ export function initCameraController() {
 
             textoBotaoCamera.textContent = 'Ligar Câmera';
             atualizarStatus(statusCamera, 'Status: Arquivo selecionado da galeria', '#555');
+            onFotoCapturada?.(); // <-- dispara callback ao escolher da galeria
         }
 
     });
@@ -157,6 +160,7 @@ export function initCameraController() {
         getFotoBlob: () => fotoCapturadaBlob,
         getGalleryFile: () => fotoGaleriaFile,
         reset,
-        parar: () => cameraInstancia.parar()
+        parar: () => cameraInstancia.parar(),
+        set onFotoCapturada(cb) { onFotoCapturada = cb; }
     }
 };
