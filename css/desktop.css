@@ -1,0 +1,227 @@
+/* css/desktop.css */
+/* ==========================================================================
+   Desktop Overrides - Só ativa acima de 1024px
+   Mobile continua intacto abaixo disso
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+
+    /* 1. Container geral ganha largura máxima e centraliza */
+    .app-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 24px;
+        height: 100vh;
+        /* ocupa tela toda */
+        display: flex;
+        flex-direction: column;
+        /* volta pra flex no desktop */
+        overflow: hidden;
+    }
+
+    /* 2. Esconde navbar mobile, header vira navegação principal */
+    /* Header vira flex container */
+    .app-header {
+        position: sticky;
+        top: 0;
+        flex-shrink: 0;
+        padding: 16px 0;
+        display: flex;
+        flex-direction: row;
+        /* <-- faltava isso */
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        z-index: 100;
+        background: #fff;
+    }
+
+    /* Zera o gap de coluna/linha que vem do mobile */
+    .app-header {
+        column-gap: 0;
+        row-gap: 0;
+    }
+
+    .header-brand {
+        display: flex;
+        /* logo + texto lado a lado */
+        align-items: center;
+        /* alinha verticalmente */
+        gap: 12px;
+        /* espaço entre logo e texto */
+        font-size: 1.5rem;
+        font-weight: 700;
+        flex-shrink: 0;
+        color: #2c3e50;
+        text-decoration: none;
+        margin-left: 15px;
+    }
+
+    .header-brand img {
+        height: 40px;
+        /* ajusta conforme teu logo */
+        width: auto;
+        display: block;
+        /* remove espaço fantasma de img inline */
+    }
+
+    .header-actions {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+        margin-right: 15px;
+    }
+
+    /* Corrigido: espaço entre as classes */
+    .header-actions .btn-primary,
+    .header-actions .btn-nav {
+        padding: 10px 20px;
+        white-space: nowrap;
+    }
+
+    .form-container {
+        flex: 1;
+        /* ocupa resto da tela */
+        min-height: 0;
+         overflow: hidden; /* scroll só no filho */
+        padding: 24px 0;
+    }
+
+    .form-section {     
+        max-width: 720px; /* trava largura máxima */
+        width: 100%;
+        margin: 0 auto; /* centraliza horizontalmente */
+        height: 100%;
+        overflow-y: auto;
+        background: var(--color-white);
+        border-radius: 16px;
+        padding: 2rem; /* aumenta padding interno já que tá mais estreito */
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        box-sizing: border-box;
+    }
+
+     .btn-submit {
+        margin-bottom: 8px; /* respiro no final */
+    }
+
+    /* 3. Dashboard: esconde ícones mobile, mostra filtros expandidos */
+    .btn-menu-icon,
+    .btn-search-icon {
+        display: none;
+    }
+
+    .dashboard-title-bar {
+        justify-content: flex-start;
+        padding: 24px 0;
+    }
+
+    .dashboard-title-bar h1 {
+        font-size: 2rem;
+    }
+
+    /* 4. Lista de pets vira grid 3 colunas */
+    .pet-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        padding: 24px 0;
+    }
+
+    .pet-card {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        grid-template-rows: auto 1fr auto auto;
+        gap: 16px 24px;
+        padding: 20px;
+        align-content: start;
+    }
+
+    .pet-card-thumb {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    /* Truque: faz o info virar "fantasma" */
+    .pet-card-info {
+        display: contents;
+    }
+
+    /* Agora h3 e .pet-specs são filhos diretos do grid */
+    .pet-card-info h3 {
+        grid-column: 2;
+        grid-row: 1;
+        margin: 0 0 12px 0;
+    }
+
+    .pet-card-info .pet-specs {
+        grid-column: 2;
+        grid-row: 1;
+        margin-top: 48px;
+        /* espaço pro h3 */
+        display: flex;
+        flex-direction: column;
+        /* <-- lista vertical */
+        gap: 8px;
+    }
+
+    .pet-card-info .pet-specs span {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+
+    /* Agora description consegue ocupar 2 colunas */
+    .pet-description {
+        grid-column: 1 / 3;
+        grid-row: 2;
+        margin: 0;
+        line-height: 1.6;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .pet-card-contact {
+        grid-column: 1 / 3;
+        grid-row: 3;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        padding-top: 16px;
+        border-top: 1px solid #eee;
+        align-self: end;
+        /* gruda no fundo da linha */
+    }
+
+    .pet-card-footer {
+        grid-column: 1 / 3;
+        grid-row: 4;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 12px;
+        border-top: 1px solid #eee;
+    }
+
+    .app-navbar {
+        display: none;
+        /* tablet já usa header */
+    }
+
+}
+
+/* Tablet: 2 colunas entre 768px e 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .pet-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .app-navbar {
+        display: none;
+        /* tablet já usa header */
+    }
+}

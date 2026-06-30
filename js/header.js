@@ -9,27 +9,24 @@
  */
 export function initHeaderToggle(btnNav, btnPrimary) {
     
-    // Função auxiliar interna para atualizar os estados visuais
-    const alternarDestaque = (botaoClicado, botaoInativo) => {
-        // Se o botão já está ativo, não faz nada
-        if (botaoClicado.classList.contains('btn-primary')) return;
+    const path = window.location.pathname;
+    const btnVer = document.getElementById('btn-ver-animais');
+    const btnAnunciar = document.getElementById('btn-anunciar-pet');
+    
+    if (!btnVer || !btnAnunciar) return; // segurança se não achar os botões
 
-        // O botão clicado ganha o destaque e perde o estilo secundário
-        botaoClicado.classList.add('btn-primary');
-        botaoClicado.classList.remove('btn-nav');
+    const isHome = path.endsWith('/') || path.endsWith('index.html');
+    const isCadastro = path.includes('cadastro.html');
 
-        // O botão inativo perde o destaque e ganha o estilo secundário
-        botaoInativo.classList.add('btn-nav');
-        botaoInativo.classList.remove('btn-primary');
-    };
-
-    // Ouvinte para o clique no "Ver Animais"
-    btnNav.addEventListener('click', () => {
-        alternarDestaque(btnNav, btnPrimary);
-    });
-
-    // Ouvinte para o clique no "Anunciar Pet"
-    btnPrimary.addEventListener('click', () => {
-        alternarDestaque(btnPrimary, btnNav);
-    });
+    if (isHome) {
+        btnVer.classList.add('btn-primary');
+        btnVer.classList.remove('btn-nav');
+        btnAnunciar.classList.add('btn-nav');
+        btnAnunciar.classList.remove('btn-primary');
+    } else if (isCadastro) {
+        btnAnunciar.classList.add('btn-primary');
+        btnAnunciar.classList.remove('btn-nav');
+        btnVer.classList.add('btn-nav');
+        btnVer.classList.remove('btn-primary');
+    }
 }
