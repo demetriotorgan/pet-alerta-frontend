@@ -10,7 +10,7 @@ export const validarFormulario = (payload) => {
         { key: 'sexo', label: 'Sexo' },
         { key: 'porte', label: 'Porte' },
         { key: 'cor', label: 'Cor Predominante' },
-        { key: 'situacao', label: 'Status' },
+        { key: 'categoria', label: 'Categoria' },
         { key: 'descricao', label: 'Descrição' },
         { key: 'nomeResponsavel', label: 'Nome do Responsável' },
         { key: 'telefone', label: 'Telefone' },

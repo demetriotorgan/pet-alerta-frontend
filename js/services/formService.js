@@ -10,45 +10,56 @@ import { limparErroFoto, mostrarErros } from '../utils/formErrorService.js';
 import { cadastrarPet } from './api/petApi.js';
 
 export function initPetForm(cameraController) {
-
+    console.log("INIT PET FORM");
     const petForm = document.getElementById('petForm');
-      // Quando tira foto OU escolhe da galeria, limpa o erro
+    console.log(petForm);
+    // Quando tira foto OU escolhe da galeria, limpa o erro
     cameraController.onFotoCapturada = () => {
         limparErroFoto();
     };
 
-    
+
     const inputGaleria = document.getElementById('petGalleryFile');
     inputGaleria.addEventListener('change', (event) => {
         const file = event.target.files[0];
-        if (!file) return;       
+        if (!file) return;
     });
 
     petForm.addEventListener('submit', async (event) => {
+        console.log("SUBMIT");
         event.preventDefault();
-         limparErroFoto(petForm);
+        console.log("1");
+        limparErroFoto(petForm);
 
-        //1.Monta objeto        
+        //1.Monta objeto   
+        console.log("2");
         const payload = buildPayload(petForm, cameraController);
 
         //2. Executar validação
+        console.log("3", payload)
         const validacao = validarFormulario(payload);
+        console.log("4", validacao);
         if (!validacao.isValid) {
             mostrarErros(petForm, validacao.camposComErro, validacao.erros);
             return; // barra o submit
         }
 
         // 3. Converte pra FormData SÓ se passou
+        console.log("6");
         const formDataFinal = payloadToFormData(payload);
 
 
         //4. Se passou segue para envio
+
+        console.log("7");
         const botaoSubmit = petForm.querySelector('.btn-submit');
+        logPayload(payload);
 
         //5. Enviando para o backend
         try {
-            setLoadingState(botaoSubmit);    
+            setLoadingState(botaoSubmit);
             const resultado = await cadastrarPet(formDataFinal);
+            console.log("8");
             console.log(resultado.data);
 
             //Restaura o botão de envio do formulário
@@ -64,16 +75,17 @@ export function initPetForm(cameraController) {
                 statusCamera,
                 textoBotaoCamera
             });
-             
+            console.log("9");
+
             limparErroFoto(petForm);
-            // logPayload(payload);
+
             alert('Animal Cadastrado com sucesso');
 
         } catch (error) {
-            alert(error.message);   
-        }finally{
+            alert(error.message);
+        } finally {
             resetLoadingState(botaoSubmit);
-        }      
+        }
     });
 
     petForm.addEventListener('input', (e) => {

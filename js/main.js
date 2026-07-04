@@ -10,6 +10,7 @@ import { initHeader } from './services/headerService.js';
 
 
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("MAIN");
     // Inicializa os recursos do Dashboard
     initFilterBadges();
 
@@ -17,7 +18,10 @@ document.addEventListener('DOMContentLoaded', () => {
     initHeader();
     
     if (document.getElementById('petForm')) {
+        console.log("FORM ENCONTRADO");
         const cameraController = initCameraController();
+        console.log(cameraController);
         initPetForm(cameraController);
+         console.log("FORM INICIALIZADO");
     }
 });
