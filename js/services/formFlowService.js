@@ -18,7 +18,7 @@ export function buildPayload(form, cameraController) {
         idade: formData.get('idade')?.trim() || '',
         porte: formData.get('porte') || '',
         cor: formData.get('cor')?.trim() || '',
-        situacao: formData.get('situacao') || '',
+        categoria: formData.get('categoria') || '',
         descricao: formData.get('descricao')?.trim() || '',
         nomeResponsavel: formData.get('nomeResponsavel')?.trim() || '',
         telefone: formData.get('telefone')?.trim() || '',
