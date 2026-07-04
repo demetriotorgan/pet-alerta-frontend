@@ -65,8 +65,14 @@
                     </div>
                     <!---Idade-->
                     <div class="form-group">
-                        <label for="petIdade">Idade:</label>
-                        <input type="text" id="petIdade" name="idade" placeholder="1 ano, 6 meses, etc...">
+                        <label for="petIdade">Idade:</label>                        
+                        <select id="petIdade" name="idade">
+                            <option value="" disabled selected>Selecione a idade</option>
+                            <option value="FILHOTE">Filhote</option>
+                            <option value="ADULTO">Adulto</option>
+                            <option value="IDOSO">Idoso</option>
+                            <option value="NAO-INFORMADO">Não sei a idade</option>
+                        </select>
                     </div>
                     <!---Porte-->
                     <div class="form-group">
@@ -98,6 +104,7 @@
                             <option value="PERDIDO">Perdido</option>
                             <option value="ABANDONADO">Abandonado</option>
                             <option value="ADOCAO">Para Adoção</option>
+                            <option value="ENCONTRADO">Encontrado</option>
                             <option value="ENCONTRADO">Encontrado</option>
 
                         </select>
