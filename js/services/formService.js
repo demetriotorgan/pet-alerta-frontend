@@ -1,6 +1,6 @@
 import { gerarPayload } from '../payload.js';
 import { resetarFormulario } from './uiResetService.js';
-import { imagePreview, videoPreview, statusCamera, textoBotaoCamera } from '../utils/domHelpers.js';
+import { imagePreview, videoPreview, statusCamera, textoBotaoCamera,botaoCamera } from '../utils/domHelpers.js';
 import { resetLoadingState, setLoadingState } from './formSubmitService.js';
 import { buildPayload } from './formFlowService.js';
 import { logPayload } from '../services/logPayload.js';
@@ -8,6 +8,7 @@ import { validarFormulario } from './validationService.js';
 import { payloadToFormData } from './payloadToFormData.js';
 import { limparErroFoto, mostrarErros } from '../utils/formErrorService.js';
 import { cadastrarPet } from './api/petApi.js';
+import { scrollParaElemento } from '../utils/scroll.js';
 
 export function initPetForm(cameraController) {
     console.log("INIT PET FORM");
@@ -23,6 +24,11 @@ export function initPetForm(cameraController) {
     inputGaleria.addEventListener('change', (event) => {
         const file = event.target.files[0];
         if (!file) return;
+    });
+
+    //scroll para area de video
+    botaoCamera.addEventListener('click', ()=>{
+        scrollParaElemento(videoPreview);
     });
 
     petForm.addEventListener('submit', async (event) => {
@@ -53,6 +59,7 @@ export function initPetForm(cameraController) {
 
         console.log("7");
         const botaoSubmit = petForm.querySelector('.btn-submit');
+
         logPayload(payload);
 
         //5. Enviando para o backend
