@@ -13,6 +13,8 @@
 @import url('./componentes/buttons.css');
 @import url('./componentes/filters.css');
 @import url('./componentes/card.css');
+@import url('./componentes/loading.css');
+@import url('./componentes/confirmaca.css');
 @import url('./form/form.css');
 @import url('./navbar.css');
 @import url('./desktop.css');

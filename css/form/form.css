@@ -11,7 +11,7 @@
 /*2. Form Container*/
 .form-container {
      display: block; /* tira flex/grid se tiver */
-    padding: 16px;
+    padding: 16px;    
 }
 
 .form-section {
@@ -25,6 +25,7 @@
     /* ADICIONA ISSO */
     max-height: calc(100vh - 80px); /* 80px = altura do header */
     overflow-y: auto;
+    margin-bottom: 30px;
 }
 
 .form-section h2{

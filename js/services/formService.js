@@ -1,6 +1,6 @@
 import { gerarPayload } from '../payload.js';
 import { resetarFormulario } from './uiResetService.js';
-import { imagePreview, videoPreview, statusCamera, textoBotaoCamera,botaoCamera } from '../utils/domHelpers.js';
+import { imagePreview, videoPreview, statusCamera, textoBotaoCamera, botaoCamera } from '../utils/domHelpers.js';
 import { resetLoadingState, setLoadingState } from './formSubmitService.js';
 import { buildPayload } from './formFlowService.js';
 import { logPayload } from '../services/logPayload.js';
@@ -9,11 +9,11 @@ import { payloadToFormData } from './payloadToFormData.js';
 import { limparErroFoto, mostrarErros } from '../utils/formErrorService.js';
 import { cadastrarPet } from './api/petApi.js';
 import { scrollParaElemento } from '../utils/scroll.js';
+import { Loading } from './loadingService.js';
+import { redirecionar } from '../utils/navigation.js';
 
 export function initPetForm(cameraController) {
-    console.log("INIT PET FORM");
     const petForm = document.getElementById('petForm');
-    console.log(petForm);
     // Quando tira foto OU escolhe da galeria, limpa o erro
     cameraController.onFotoCapturada = () => {
         limparErroFoto();
@@ -27,37 +27,29 @@ export function initPetForm(cameraController) {
     });
 
     //scroll para area de video
-    botaoCamera.addEventListener('click', ()=>{
+    botaoCamera.addEventListener('click', () => {
         scrollParaElemento(videoPreview);
     });
 
     petForm.addEventListener('submit', async (event) => {
-        console.log("SUBMIT");
+
         event.preventDefault();
-        console.log("1");
         limparErroFoto(petForm);
 
-        //1.Monta objeto   
-        console.log("2");
+        //1.Monta objeto           
         const payload = buildPayload(petForm, cameraController);
 
-        //2. Executar validação
-        console.log("3", payload)
+        //2. Executar validação        
         const validacao = validarFormulario(payload);
-        console.log("4", validacao);
         if (!validacao.isValid) {
             mostrarErros(petForm, validacao.camposComErro, validacao.erros);
             return; // barra o submit
         }
 
-        // 3. Converte pra FormData SÓ se passou
-        console.log("6");
+        // 3. Converte pra FormData SÓ se passou        
         const formDataFinal = payloadToFormData(payload);
 
-
-        //4. Se passou segue para envio
-
-        console.log("7");
+        //4. Se passou segue para envio        
         const botaoSubmit = petForm.querySelector('.btn-submit');
 
         logPayload(payload);
@@ -65,8 +57,14 @@ export function initPetForm(cameraController) {
         //5. Enviando para o backend
         try {
             setLoadingState(botaoSubmit);
+            Loading.show({
+                button: botaoSubmit,
+                buttonText: "Enviando...",
+                title: "Publicando anúncio...",
+                message: "Estamos enviando as informações."
+            });
             const resultado = await cadastrarPet(formDataFinal);
-            console.log("8");
+            
             console.log(resultado.data);
 
             //Restaura o botão de envio do formulário
@@ -82,16 +80,17 @@ export function initPetForm(cameraController) {
                 statusCamera,
                 textoBotaoCamera
             });
-            console.log("9");
-
-            limparErroFoto(petForm);
-
-            alert('Animal Cadastrado com sucesso');
+            Loading.hide();
+            redirecionar("cadastro-sucesso.html");
+            
+            limparErroFoto(petForm);       
 
         } catch (error) {
             alert(error.message);
-        } finally {
+             Loading.hide();
+        } finally {                        
             resetLoadingState(botaoSubmit);
+             Loading.hide();
         }
     });
 

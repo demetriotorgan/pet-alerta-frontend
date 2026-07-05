@@ -10,188 +10,224 @@
 </head>
 
 <body>
-     <div class="app-container">
-         <!------Menu de Navegação do Header-------->
-   <header class="app-header">
+    <div class="app-container">
+        <!------Menu de Navegação do Header-------->
+        <header class="app-header">
             <div class="header-brand"><img src="./img/logo.png" alt="">PetAlerta</div>
             <div class="header-actions">
                 <a id="btn-ver-animais" href="index.html" class="btn-primary">Ver Animais</a>
                 <a id="btn-anunciar-pet" href="cadastro.html" class="btn-nav">Anunciar Pet</a>
             </div>
         </header>
-    <!-----Hero Section------>
-    <section class="hero">
-        <h1>Ajude a reencontrar quem espalha amor</h1>
-        <p>Preencha os dados abaixo para registrar um animal perdido, encontrado ou disponível para adoção.</p>
-    </section>
-    <!-----Form----->
-    <div class="form-container">
+        <!-----Hero Section------>
+        <section class="hero">
+            <h1>Ajude a reencontrar quem espalha amor</h1>
+            <p>Preencha os dados abaixo para registrar um animal perdido, encontrado ou disponível para adoção.</p>
+        </section>
+        <!-----Form----->
+        <div class="form-container">
 
-        <section class="form-section">
-            <h2>Cadastrar Animal</h2>
-            <form id="petForm">
-                <p>Informações do animal
-                    <i class="ph ph-paw-print"></i>
-                </p>
-                <div class="form-info">
-                    <!---Nome-->
-                    <div class="form-group">
-                        <label for="petName">Nome do Pet (se souber):</label>
-                        <input type="text" id="petName" name="nomeAnimal" placeholder="Ex: Bob, Mel...">
-                    </div>
-                    <!---Especie-->
-                    <div class="form-group">
-                        <label for="petType">Espécie do Animal:</label>
-                        <select id="petType" name="especie">
-                            <option value="" disabled selected>Selecione a espécie</option>
-                            <option value="CACHORRO">Cachorro</option>
-                            <option value="GATO">Gato</option>
-                            <option value="OUTRO">Outro</option>
-                        </select>
-                    </div>
-                    <!---Raça-->
-                    <div class="form-group">
-                        <label for="petRaca">Raça (se souber):</label>
-                        <input type="text" id="petRaca" name="raca" placeholder="Vira-Lata">
-                    </div>
-                    <!--Sexo-->
-                    <div class="form-group">
-                        <label for="petSexo">Sexo:</label>
-                        <select id="petSexo" name="sexo">
-                            <option value="" disabled selected>Selecione o sexo</option>
-                            <option value="MACHO">Macho</option>
-                            <option value="FEMEA">Fêmea</option>
-                        </select>
-                    </div>
-                    <!---Idade-->
-                    <div class="form-group">
-                        <label for="petIdade">Idade:</label>                        
-                        <select id="petIdade" name="idade">
-                            <option value="" disabled selected>Selecione a idade</option>
-                            <option value="FILHOTE">Filhote</option>
-                            <option value="ADULTO">Adulto</option>
-                            <option value="IDOSO">Idoso</option>
-                            <option value="NAO-INFORMADO">Não sei a idade</option>
-                        </select>
-                    </div>
-                    <!---Porte-->
-                    <div class="form-group">
-                        <label for="petPorte">Porte:</label>
-                        <select id="petPorte" name="porte">
-                            <option value="" disabled selected>Selecione o porte</option>
-                            <option value="PEQUENO">Pequeno</option>
-                            <option value="MEDIO">Médio</option>
-                            <option value="GRANDE">Grande</option>
-                        </select>
-                    </div>
-                    <!---Cor Predominante-->
-                    <div class="form-group">
-                        <label for="petCor">Cor Predominante:</label>
-                        <input type="text" id="petCor" name="cor"
-                            placeholder="Caramelo, malhado, preto com pintas brancas...">
-                    </div>
-                </div>
-
-                <!--Categoria-->
-                <div class="form-info">
-                    <p>Categoria
-                        <i class="ph ph-magnifying-glass"></i>
+            <section class="form-section">
+                <h2>Cadastrar Animal</h2>
+                <form id="petForm">
+                    <p>Informações do animal
+                        <i class="ph ph-paw-print"></i>
                     </p>
+                    <div class="form-info">
+                        <!---Nome-->
+                        <div class="form-group">
+                            <label for="petName">Nome do Pet (se souber):</label>
+                            <input type="text" id="petName" name="nomeAnimal" placeholder="Ex: Bob, Mel...">
+                        </div>
+                        <!---Especie-->
+                        <div class="form-group">
+                            <label for="petType">Espécie do Animal:</label>
+                            <select id="petType" name="especie">
+                                <option value="" disabled selected>Selecione a espécie</option>
+                                <option value="CACHORRO">Cachorro</option>
+                                <option value="GATO">Gato</option>
+                                <option value="OUTRO">Outro</option>
+                            </select>
+                        </div>
+                        <!---Raça-->
+                        <div class="form-group">
+                            <label for="petRaca">Raça (se souber):</label>
+                            <input type="text" id="petRaca" name="raca" placeholder="Vira-Lata">
+                        </div>
+                        <!--Sexo-->
+                        <div class="form-group">
+                            <label for="petSexo">Sexo:</label>
+                            <select id="petSexo" name="sexo">
+                                <option value="" disabled selected>Selecione o sexo</option>
+                                <option value="MACHO">Macho</option>
+                                <option value="FEMEA">Fêmea</option>
+                            </select>
+                        </div>
+                        <!---Idade-->
+                        <div class="form-group">
+                            <label for="petIdade">Idade:</label>
+                            <select id="petIdade" name="idade">
+                                <option value="" disabled selected>Selecione a idade</option>
+                                <option value="FILHOTE">Filhote</option>
+                                <option value="ADULTO">Adulto</option>
+                                <option value="IDOSO">Idoso</option>
+                                <option value="NAO-INFORMADO">Não sei a idade</option>
+                            </select>
+                        </div>
+                        <!---Porte-->
+                        <div class="form-group">
+                            <label for="petPorte">Porte:</label>
+                            <select id="petPorte" name="porte">
+                                <option value="" disabled selected>Selecione o porte</option>
+                                <option value="PEQUENO">Pequeno</option>
+                                <option value="MEDIO">Médio</option>
+                                <option value="GRANDE">Grande</option>
+                            </select>
+                        </div>
+                        <!---Cor Predominante-->
+                        <div class="form-group">
+                            <label for="petCor">Cor Predominante:</label>
+                            <input type="text" id="petCor" name="cor"
+                                placeholder="Caramelo, malhado, preto com pintas brancas...">
+                        </div>
+                    </div>
+
+                    <!--Categoria-->
+                    <div class="form-info">
+                        <p>Categoria
+                            <i class="ph ph-magnifying-glass"></i>
+                        </p>
+                        <div class="form-group">
+                            <label for="petCategoria">Categoria:</label>
+                            <select id="petCategoria" name="categoria">
+                                <option value="" disabled selected>Selecione a categoria</option>
+                                <option value="PERDIDO">Perdido</option>
+                                <option value="ADOCAO">Para Adoção</option>
+                                <option value="ABANDONADO">Abandonado</option>
+                                <option value="ENCONTRADO">Encontrado</option>
+                                <option value="CAMPANHA">Campanha</option>
+
+                            </select>
+                        </div>
+                    </div>
+
+                    <!--Descrição-->
+                    <div class="form-info">
+                        <p>Descrição <i class="ph ph-article"></i></p>
+                        <div class="form-group">
+                            <textarea id="petDescricao" name="descricao"
+                                placeholder="Descreva características, último local visto, coleira, comportamento etc."></textarea>
+                        </div>
+                    </div>
+
+                    <!--Responsável-->
+                    <div class="form-info">
+                        <p>Responsável
+                            <i class="ph ph-user-circle"></i>
+                        </p>
+                        <div class="form-group">
+                            <label for="responsavelNome">Nome do Responsável</label>
+                            <input type="text" id="responsavelNome" name="nomeResponsavel" placeholder="Seu nome">
+                        </div>
+                        <div class="form-group">
+                            <label for="petContact">Telefone de Whatssapp:
+                            </label>
+                            <input type="tel" id="petContact" name="telefone" placeholder="Ex: 11999999999">
+                        </div>
+                    </div>
+
+                    <!--Localização-->
+                    <div class="form-info">
+                        <p>Localização
+                            <i class="ph ph-map-pin"></i>
+                        </p>
+                        <div class="form-group">
+                            <label for="petCidade">Cidade:</label>
+                            <input type="text" id="petCidade" name="cidade" autocomplete="address-level2"
+                                placeholder="Informe sua Cidade">
+                        </div>
+                    </div>
+
+                    <!--Foto-->
                     <div class="form-group">
-                        <label for="petCategoria">Categoria:</label>
-                        <select id="petCategoria" name="categoria">
-                            <option value="" disabled selected>Selecione a categoria</option>
-                            <option value="PERDIDO">Perdido</option>
-                            <option value="ADOCAO">Para Adoção</option>
-                            <option value="ABANDONADO">Abandonado</option>                            
-                            <option value="ENCONTRADO">Encontrado</option>
-                            <option value="CAMPANHA">Campanha</option>
+                        <label>Escolha como adicionar a foto:</label>
+                        <div class="botoes-foto-container">
 
-                        </select>
-                    </div>
-                </div>
+                            <button type="button" id="botaoCamera" class="btn-camera-container">
+                                <span class="icon-camera">📷</span>
+                                <span class="text-camera" id="textoBotaoCamera">Ligar Câmera</span>
+                            </button>
 
-                <!--Descrição-->
-                <div class="form-info">
-                    <p>Descrição <i class="ph ph-article"></i></p>
-                    <div class="form-group">
-                        <textarea id="petDescricao" name="descricao"
-                            placeholder="Descreva características, último local visto, coleira, comportamento etc."></textarea>
-                    </div>
-                </div>
+                            <label for="petGalleryFile" class="btn-camera-container">
+                                <span class="icon-camera">📁</span>
+                                <span class="text-camera">Escolher da galeria</span>
+                            </label>
 
-                <!--Responsável-->
-                <div class="form-info">
-                    <p>Responsável
-                        <i class="ph ph-user-circle"></i>
-                    </p>
-                    <div class="form-group">
-                        <label for="responsavelNome">Nome do Responsável</label>
-                        <input type="text" id="responsavelNome" name="nomeResponsavel" placeholder="Seu nome">
-                    </div>
-                    <div class="form-group">
-                        <label for="petContact">Telefone de Whatssapp:
-                        </label>
-                        <input type="tel" id="petContact" name="telefone" placeholder="Ex: 11999999999">
-                    </div>
-                </div>
-
-                <!--Localização-->
-                <div class="form-info">
-                    <p>Localização
-                        <i class="ph ph-map-pin"></i>
-                    </p>
-                    <div class="form-group">
-                        <label for="petCidade">Cidade:</label>
-                        <input type="text" id="petCidade" name="cidade" autocomplete="address-level2"
-                            placeholder="Informe sua Cidade">
-                    </div>
-                </div>
-
-                <!--Foto-->
-                <div class="form-group">
-                    <label>Escolha como adicionar a foto:</label>
-                    <div class="botoes-foto-container">
-
-                        <button type="button" id="botaoCamera" class="btn-camera-container">
-                            <span class="icon-camera">📷</span>
-                            <span class="text-camera" id="textoBotaoCamera">Ligar Câmera</span>
-                        </button>
-
-                        <label for="petGalleryFile" class="btn-camera-container">
-                            <span class="icon-camera">📁</span>
-                            <span class="text-camera">Escolher da galeria</span>
-                        </label>
-
-                        <input type="file" id="petGalleryFile" name="foto" accept="image/*" hidden>
-                    </div>
-
-                    <div class="camera-container">
-
-                        <div class="video-wrapper">
-                            <video id="videoPreview" autoplay playsinline></video>
-
-                            <div class="camera-overlay">
-                                <div class="capture-button">
-                                    <i class="ph ph-camera"></i>
-                                </div>
-                            </div>
+                            <input type="file" id="petGalleryFile" name="foto" accept="image/*" hidden>
                         </div>
 
-                        <img id="imagePreview" alt="Prévia do pet" />
-                        <div id="statusCamera" class="status-camera">Status: Câmera Desligada</div>
+                        <div class="camera-container">
+
+                            <div class="video-wrapper">
+                                <video id="videoPreview" autoplay playsinline></video>
+
+                                <div class="camera-overlay">
+                                    <div class="capture-button">
+                                        <i class="ph ph-camera"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <img id="imagePreview" alt="Prévia do pet" />
+                            <div id="statusCamera" class="status-camera">Status: Câmera Desligada</div>
+                        </div>
                     </div>
-                </div>
 
-                <button type="submit" class="btn-submit">Cadastrar Animal</button>
-            </form>
-        </section>
+                    <button type="submit" class="btn-submit">Cadastrar Animal</button>
+                </form>
+            </section>
 
-        <main id="mural" class="mural-grid">
-        </main>
+            <main id="mural" class="mural-grid">
+            </main>
+        </div>
+
+        <nav class="app-navbar">
+            <a href="#" class="nav-item active">
+                <i class="ph ph-house"></i>
+                <span class="label">Home</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="ph ph-plus-circle"></i>
+                <span class="label">Novo</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="ph ph-user"></i>
+                <span class="label">Perfil</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="ph ph-gear"></i>
+                <span class="label">Configurações</span>
+            </a>
+        </nav>
+
+        <!-----Carregando----->
+        <div id="loadingOverlay" class="loading-overlay hidden">
+
+            <div class="loading-card">
+                <div class="loading-spinner"></div>
+
+                <h3 id="loadingTitle">
+                    Publicando anúncio...
+                </h3>
+
+                <p id="loadingMessage">
+                    Aguarde alguns segundos.
+                </p>
+            </div>
+        </div>
+
+        <script type="module" src="/js/main.js"></script>
     </div>
-    <script type="module" src="/js/main.js"></script>
-     </div>   
 </body>
 
 </html>
