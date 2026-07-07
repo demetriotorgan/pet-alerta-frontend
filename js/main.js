@@ -7,6 +7,7 @@ import { initFilterBadges } from './dashboard.js';
 import { initCameraController } from './services/cameraService.js';
 import { initPetForm } from './services/formService.js';
 import { initHeader } from './services/headerService.js';
+import { initPetList } from './services/petListService.js';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -16,6 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //Toggle do Header
     initHeader();
+
+    //Lista cards
+    initPetList();
     
     if (document.getElementById('petForm')) {
         console.log("FORM ENCONTRADO");

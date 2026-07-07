@@ -59,7 +59,7 @@
     display: flex;
     flex-direction: column; /* Empilha os cards um abaixo do outro no mobile */
     gap: 1rem;              /* Espaçamento uniforme de 16px entre cada card */
-    padding: 1rem;          /* Afasta a lista das bordas da tela do celular */
+    padding: 5px;          /* Afasta a lista das bordas da tela do celular */
     width: 100%;            /* Ocupa toda a largura disponível */
     box-sizing: border-box; /* Garante que o padding não quebre a largura */
 }
@@ -169,7 +169,7 @@
 
 /* Container de Contacto */
 .pet-card-contact {
-    padding: 0 1rem; /* Alinhamento horizontal idêntico ao .pet-card-info */
+    padding: 0 5px; /* Alinhamento horizontal idêntico ao .pet-card-info */
     display: flex;
     flex-direction: column;
     gap: 0.5rem; /* Espaçamento controlado entre as linhas de dados */

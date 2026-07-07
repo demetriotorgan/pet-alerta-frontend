@@ -6,5 +6,9 @@ export function cadastrarPet(formData) {
         method: 'POST',
         body: formData
     });
+};
 
+export async function listarPets() {
+    const response = await apiFetch('/pets')
+    return response.data
 }
