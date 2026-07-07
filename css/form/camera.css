@@ -15,19 +15,23 @@
 /* Regras de estrutura compartilhadas para os elementos de mídia */
 .camera-container video,
 .camera-container img {
-    width: 100%;
+   width: 100%;
     max-width: 320px;
-    /* Limita o tamanho para telas mobile */
-    border-radius: var(--radius-md, 8px);
+
+    height: 240px;
+
+    object-fit: cover;
+
+    border-radius: var(--radius-md);
+
     display: none;
+
 }
 
 /* Estilo específico do elemento de vídeo */
 .camera-container video {
     background-color: #ccc;
-    height: 240px;
-    /* Define uma altura padrão para quando for exibido pelo JS */
-    object-fit: cover;
+    
 }
 
 /* Estilo específico do elemento de imagem (Prévia capturada) */

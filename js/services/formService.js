@@ -15,16 +15,7 @@ import { redirecionar } from '../utils/navigation.js';
 
 export function initPetForm(cameraController) {
     const petForm = document.getElementById('petForm');
-
-    const iconeCamera = document.querySelector('.capture-button i');
-    const botaoSubmit = petForm.querySelector('.btn-submit');
-
-    console.log(iconeCamera);
-    console.log(botaoSubmit);
-
-    iconeCamera.addEventListener('click', () => {
-        scrollParaElemento(botaoSubmit);
-    });
+    
     // Quando tira foto OU escolhe da galeria, limpa o erro
     cameraController.onFotoCapturada = () => {
         limparErroFoto();
