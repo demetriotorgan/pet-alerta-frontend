@@ -9,3 +9,5 @@ export const overlay = document.querySelector(".camera-overlay");
 export const overlayLoading = document.getElementById("loadingOverlay");
 export const titulo = document.getElementById("loadingTitle");
 export const mensagem = document.getElementById("loadingMessage");
+export const iconeCamera = document.querySelector('.capture-button i');
+export const botaoSubmit = document.querySelector('btn-submit');

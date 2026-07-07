@@ -1,6 +1,6 @@
 import { gerarPayload } from '../payload.js';
 import { resetarFormulario } from './uiResetService.js';
-import { imagePreview, videoPreview, statusCamera, textoBotaoCamera, botaoCamera } from '../utils/domHelpers.js';
+import { imagePreview, videoPreview, statusCamera, textoBotaoCamera, botaoCamera, iconeCamera,botaoSubmit } from '../utils/domHelpers.js';
 import { resetLoadingState, setLoadingState } from './formSubmitService.js';
 import { buildPayload } from './formFlowService.js';
 import { logPayload } from '../services/logPayload.js';
@@ -11,6 +11,11 @@ import { cadastrarPet } from './api/petApi.js';
 import { scrollParaElemento } from '../utils/scroll.js';
 import { Loading } from './loadingService.js';
 import { redirecionar } from '../utils/navigation.js';
+
+
+iconeCamera.addEventListener('click', () => {
+    scrollParaElemento(botaoSubmit);
+});
 
 export function initPetForm(cameraController) {
     const petForm = document.getElementById('petForm');
