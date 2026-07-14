@@ -65,6 +65,7 @@ export function initPetForm(cameraController) {
                 title: "Publicando anúncio...",
                 message: "Estamos enviando as informações."
             });
+            console.log("ANTES DO POST");
             const resultado = await cadastrarPet(formDataFinal);
 
             console.log(resultado.data);
