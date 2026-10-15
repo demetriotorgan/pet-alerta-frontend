@@ -98,15 +98,17 @@
                             <i class="ph ph-magnifying-glass"></i>
                         </p>
                         <div class="form-group">
-                            <label for="petCategoria">Categoria:</label>
-                            <select id="petCategoria" name="categoria">
-                                <option value="" disabled selected>Selecione a categoria</option>
-                                <option value="PERDIDO">Perdido</option>
-                                <option value="ADOCAO">Para Adoção</option>
-                                <option value="ABANDONADO">Abandonado</option>
-                                <option value="ENCONTRADO">Encontrado</option>
-                                <option value="CAMPANHA">Campanha</option>
+                            <label for="petCategoria">Categoria do anúncio:</label>
 
+                            <select id="petCategoria" name="categoria" required>
+                                <option value="" disabled selected>
+                                    Selecione a categoria
+                                </option>
+                                <option value="DOACAO">Para adoção</option>
+                                <option value="ENCONTRADO">Animal encontrado</option>
+                                <option value="ABANDONADO">Animal abandonado</option>
+                                <option value="PERDIDO">Animal perdido</option>
+                                <option value="CAMPANHA">Campanha</option>
                             </select>
                         </div>
                     </div>
@@ -187,7 +189,7 @@
                 </form>
             </section>
 
-          
+
         </div>
 
         <nav class="app-navbar">
